@@ -28,6 +28,7 @@ void parseArguments(int argc, char *argv[]){
     return;
         }
     }
+    printf(GRN"**"RED" Welcome to GrepMinus "GRN"** \n"reset);
     printf(BLU"* Use the following syntaxt to start searching *\n"reset);
     printf("\t grepminus "UCYN"search "UYEL"string"MAG" filepath \n"reset);
 }

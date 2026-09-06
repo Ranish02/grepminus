@@ -49,7 +49,7 @@ void printWhole(char *str , int len){
 }
 
 void printArguments ( int argc, char *argv[]){
-    for( u_int32_t i = 0; i < argc; i++){
+    for( int i = 0; i < argc; i++){
         printf("%d = %s \n", i, argv[i]); // argv[0] is the executable program name
     }
     return;

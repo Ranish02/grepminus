@@ -10,10 +10,10 @@ DEPS = consolelog.h files.h arguments.h
 # Automatically converts the .c list into a .o (object) list
 OBJS = $(SRCS:.c=.o)
 
-all: main
+all: build/bin/grepminus
 
 # Links main.o, consolelog.o, and files.o together
-main : $(OBJS)
+build/bin/grepminus : $(OBJS)
 	$(CC) $^ -o $@
 
 # Compiles each .c file into a .o file, watching for header changes
@@ -22,4 +22,4 @@ main : $(OBJS)
 
 .PHONY: clean
 clean:
-	rm -f *.o main
+	rm -f *.o build/bin/grepminus

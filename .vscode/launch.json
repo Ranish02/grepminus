@@ -5,7 +5,7 @@
             "name": "Debug C program",
             "type": "lldb",
             "request": "launch",
-            "program": "${workspaceFolder}/main",
+            "program": "${workspaceFolder}/build/bin/grepminus",
             "args": [
                 "search",
                 "broccoli",
