@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug C program",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/main",
+            "args": [
+                "search",
+                "broccoli",
+                "."
+            ],
+            "cwd": "${workspaceFolder}",
+            "terminal" : "integrated",
+            "preLaunchTask": "make"
+        }
+    ]
+}
