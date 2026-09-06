@@ -21,7 +21,7 @@ gcc main.c arguments.c consolelog.c files.c -o grepminus
 Either run using the following command
 
 ```bash
-build/bin/grepminus search string filepath
+grepminus search string filepath
 ```
 
 or copy this somewhere your terminal is already looking for binaries and use it that way. For windows adding PATH.
