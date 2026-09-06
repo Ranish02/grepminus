@@ -5,8 +5,6 @@
 #include "consolelog.h"
 int main(int argc, char *argv[]) {
     printError("** Welcome to GrepMinus ** \n");
-    // scanDirectoryItemsForSearch(".","main");
-    //fileReader("data.txt");
     parseArguments(argc,argv);
     return 0;
 }

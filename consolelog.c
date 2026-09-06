@@ -3,7 +3,6 @@
 #include "ansicolors.h"
 
 void printError(char *str){
-    // Print it in red (\033[0;31m) and reset to default (\033[0m)
     printf("\033[0;31m%s\033[0m\n",str);
     return;
 }
@@ -32,9 +31,6 @@ void printLineHighlighted( char *line, int start, int len){
         }         
     }
     printf("\033[0m\n");
-    // for(int i = 0; i < start + 9; i++){
-    //     printf(" ");
-    // }
     printf("%*s^\n", start, "");
     return;
 

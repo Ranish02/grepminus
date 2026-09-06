@@ -28,6 +28,6 @@ void parseArguments(int argc, char *argv[]){
     return;
         }
     }
-    printf(BLU"*Use the following syntaxt to start searching *\n"reset);
+    printf(BLU"* Use the following syntaxt to start searching *\n"reset);
     printf("\t grepminus "UCYN"search "UYEL"string"MAG" filepath \n"reset);
 }

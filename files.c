@@ -5,9 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-#define RED "\e[0;31m"
-#define DEF "\033[0m"
+#include "ansicolors.h"
 
 typedef struct {
   int isFound;
@@ -95,8 +93,6 @@ void searchStringInFile(char *filename, char *searchString) {
                          location.stringLength);
     printf("Found at line %d:%d at %s", location.lineNumber + 1, location.columnNumber + 1,filename);
     printf("\n");
-  // } else {
-    // printf(RED"Not found at %s \n"DEF, filename);
   }
   fclose(fp);
 }
@@ -107,29 +103,16 @@ void fileReader(char *filename) {
     printError("file does not exists");
   }
 
-  printf("File pointer : %p \n", fp);
 
   fseek(fp, 0, SEEK_END);
   long file_size = ftell(fp);
   char *buff = malloc(file_size + 1);
   rewind(fp);
-  printf("The size of the file is %ld\n", file_size);
+  printf("The size of the file is "YELHB" %ld bytes \n"reset"\n", file_size);
   fread(buff, 1, file_size, fp);
   buff[file_size] =
       '\0'; // adding null terminator of file at the nth ( end of file)
-  Loc_T location = searchWithinFile(buff, "over the lazy ");
-  if (location.isFound == 1) {
-    printf("\n");
-    // printf("Line %d , column : %d , line %s, string : %s , stringlen : %d
-    // \n", location.lineNumber, location.columnNumber, location.lineStart,
-    // location.charLocation, location.stringLength);
-    printLineHighlighted(location.lineStart, location.columnNumber,
-                         location.stringLength);
-    printf("Line %d:%d ", location.lineNumber + 1, location.columnNumber + 1);
-    printf("\n");
-  } else {
-    printError("Not found");
-  }
+  printf("%s \n",buff);
   fclose(fp);
 }
 
@@ -153,17 +136,11 @@ void scanDirectoryItemsForSearch(const char *dir_path , char *searchString) {
     snprintf(path, sizeof(path), "%s/%s", dir_path, entry->d_name);
 
     if (entry->d_type == DT_DIR) {
-      // printf("path: %s/%s >>>>>>\n", dir_path, entry->d_name);
       scanDirectoryItemsForSearch(path,searchString);
     } else if (entry->d_type == DT_REG) {
       char buff[24];
       fileExtension(buff, entry);
-      // uint8_t isTextFile = strcmp(buff, "txt");
-      // if (isTextFile == 0) {
-        // printf("\n");
         searchStringInFile(path, searchString);
-        // printError(path);
-      // }
     }
   }
   // Close the directory stream
@@ -193,14 +170,7 @@ void printDirectoryItems(const char *dir_path) {
       printf("path: %s/%s >>>>>>\n", dir_path, entry->d_name);
       printDirectoryItems(path);
     } else if (entry->d_type == DT_REG) {
-      char buff[24];
-      fileExtension(buff, entry);
-      uint8_t isTextFile = strcmp(buff, "txt");
-      if (isTextFile == 0) {
-        printf("\n");
-        searchStringInFile(path, "broccoli");
-        printError(path);
-      }
+      printf("path: %s/%s >>>>>>\n", dir_path, entry->d_name);
     }
   }
 
