@@ -13,7 +13,7 @@ From blazing fast Javascript/Typescript to coding in C. This is my journey in pr
 #### run the following command (Using GCC)
 
 ```bash
-gcc main.c arguments.c consolelog.c files.c -o build/bin/grepminus
+gcc main.c arguments.c consolelog.c files.c -o grepminus
 ```
 
 #### Now the binary is built for your specific platform
