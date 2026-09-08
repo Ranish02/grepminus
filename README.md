@@ -1,8 +1,8 @@
 # GREP MINUS- basic CLI utility
 
-Using C programming language made a simple utility app that search through the directory for a string. Helping me on working towards understanding of how some of daily cli's and applications work under the hood.
+Using C programming language made a simple utility app that search through the directory for a string. Also, helping me on working towards understanding of how some of daily cli's and applications work under the hood.
 
-From blazing fast Javascript/Typescript to coding in C. This is my journey in progress to understand how computers actually work is what I am focused on nowadays.
+From blazing fast Javascript/Typescript to coding in C. This is my journey in progress to understand how computers actually work. And it is what I am focused on learning recently.
 
 ## How to build and use it on you machine
 
@@ -21,7 +21,7 @@ gcc main.c arguments.c consolelog.c files.c -o grepminus
 Either run using the following command
 
 ```bash
-grepminus search string filepath
+./grepminus search string directory
 ```
 
 or copy this somewhere your terminal is already looking for binaries and use it that way. For windows adding PATH.
